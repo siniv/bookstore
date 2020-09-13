@@ -1,7 +1,17 @@
 package s2020.Bookstore.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+
 	private String title;
 	private String author;
 	private int year;
@@ -21,6 +31,14 @@ public class Book {
 		this.price = price;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
